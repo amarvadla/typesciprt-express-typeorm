@@ -2,7 +2,7 @@ import { ConnectionOptions } from 'typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 const config: ConnectionOptions = {
-  type: 'postgres',
+  type: 'mysql',
   name: 'default',
   host: process.env.PG_HOST,
   port: Number(process.env.PG_PORT),
@@ -11,7 +11,7 @@ const config: ConnectionOptions = {
   database: process.env.POSTGRES_DB,
   synchronize: false,
   logging: false,
-  entities: ['src/orm/entities/**/*.ts'],
+  entities: ['src/orm/entities/**/*.ts', './dist/orm/entities/**/*.js'],
   migrations: ['src/orm/migrations/**/*.ts'],
   subscribers: ['src/orm/subscriber/**/*.ts'],
   cli: {

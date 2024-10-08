@@ -1,8 +1,8 @@
 import { ConnectionOptions } from 'typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
-const configSeed: ConnectionOptions = {
-  type: 'postgres',
+export const configSeed: ConnectionOptions = {
+  type: 'mysql',
   host: process.env.PG_HOST,
   port: Number(process.env.PG_PORT),
   username: process.env.POSTGRES_USER,
@@ -17,5 +17,3 @@ const configSeed: ConnectionOptions = {
   },
   namingStrategy: new SnakeNamingStrategy(),
 };
-
-export = configSeed;
